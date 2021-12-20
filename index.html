@@ -13982,7 +13982,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In this tutorial, I will analyze data from the World Happiness Report for 2021. The <a href="https://worldhappiness.report/archive/">World Happiness Report</a> contains happiness rankings of countries around the world. The polling to collect the happiness data is done by Gallup and published in the Gallup World Poll (GWP). The GWP has a section about global happiness data called the "<a href="https://www.gallup.com/analytics/349487/gallup-global-happiness-center.aspx">Gallup Global Happiness Center</a>".</p>
-<p>The goal of this tutorial is to analyze factors that affect the happiness in a country. During this tutorial, I will walk through the phases of the data science pipeline to help me analyze the data and derive useful insights from that analysis.</p>
+<p>The goal of this tutorial is to analyze factors that affect the happiness in a country or region. During this tutorial, I will walk through the steps of the data science pipeline to help me analyze the data and derive useful insights from that analysis.</p>
 
 </div>
 </div>
@@ -13993,7 +13993,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Happiness is an important factor to consider when governments are making public policies. Their policies are hopefully meant to make people happy so it is useful to have some accurate way of measuring happiness. To measure happiness, we need to find out what factors affect happiness. Then, when making policies, take these factors into account so the happiness of citizens can be maximized. There can be many different factors that affect the happiness of different types of people so it would be good to find some general factors that make most people happy.</p>
+<p>Happiness is an important factor to consider when governments are making public policies. Their policies are hopefully meant to make people happy so it is useful to have some accurate way of measuring happiness. To measure happiness, we need to find out what factors affect happiness. Then, when making policies, these factors can be taken into account so the happiness of citizens can be maximized. There can be many different factors that affect the happiness of different types of people so it would be good to find some general factors that make most people happy.</p>
 <p>There are many factors that contribute to world happiness meaning that happiness can be used as a general measure of progress for some country or region. So by measuring happiness you can also get an idea of how some country is doing overall rather than having to analyze many different factors.</p>
 <p>Analyzing factors that could make people happy and deriving insights form the analysis is a perfect task for data science.</p>
 
@@ -14061,7 +14061,8 @@ Requirement already satisfied: et-xmlfile in /opt/conda/lib/python3.9/site-packa
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Data collection is the first step in the data science pipeline. It is self explanatory: collect the data that you want to analyze. Below are the data that I chose to analyze.</p>
+<p>Data collection is the first step in the data science pipeline. It is self explanatory: collect the data that you want to analyze. It is common to store information in tables because they allow us to access data easily and are easy to understand. The tables that I use are called <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">DataFrames</a> which are objects in Pandas. <a href="https://pandas.pydata.org">Pandas</a> is a data analysis tool. Below are the data that I chose to analyze.</p>
+<p>To read more about data collection click <a href="https://ori.hhs.gov/education/products/n_illinois_u/datamanagement/dctopic.html">here</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14749,6 +14750,7 @@ Requirement already satisfied: et-xmlfile in /opt/conda/lib/python3.9/site-packa
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>During the data processing step of the data science pipeline, the collected data is prepared for analysis. Here I will choose columns that have the data I want and put them into one table so the data is easy to access. I will also handle missing data and reorganize tables if necessary. The data processing step of the data science pipeline is usually the longest among the other steps.</p>
+<p>To read more about data processing click <a href="https://medium.com/@vinitasilaparasetty/guide-to-data-cleaning-for-data-science-53e056c8eb98">here</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16306,7 +16308,9 @@ dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this step of the data science pipline I will be doing an exploraroty analysis of the collected data. I will use graphs and plots as data visualization to help with my analysis. My goal is to decide which factors affect the happiness of a country.</p>
+<p>In this step of the data science pipline I will be doing an exploraroty analysis of the collected data. I will use graphs and plots as data visualization to help with my analysis. My goal is to decide which factors affect the happiness of a country. Most of my plotting will be done using <a href="https://matplotlib.org">Matplotlib</a>. Matplotlib is a library for creating plots in Python. Data can also be plotted using the DataFrame.plot() function. In this project I use bar plots, scatter plots, and violin plots.</p>
+<p>To read about some common statistical plots click <a href="https://www.statisticshowto.com/types-graphs/">here</a>.</p>
+<p>To read more about exploratory data analysis click <a href="https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm">here</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -17041,7 +17045,9 @@ dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>I have collected some data that can be used to predict the happiness of a country so I will contruct a linear model to make predictions.</p>
+<p>I have collected some data that can be used to predict the happiness of a country so I will contruct a linear model that can be used to make predictions. I will also analyze the summary statistics of my model and derive insights from that.</p>
+<p>A linear regression model is a best fit line of some data points that trend linearly. Suppose it takes a long time to collect these data points. To make a prediction about a population, we take a sample of these data points and construct a model. This model can be used to make predictions about some dependent variable given some independent variables. This means we do not need to collect all of the data from the population to make an accurate prediction. <a href="https://scikit-learn.org/stable/">Scikit-learn</a> and <a href="https://www.statsmodels.org/stable/index.html">statsmodels</a> are commonly used for statistical modeling and machine learning.</p>
+<p>To read more about linear regression click <a href="http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm">here</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
